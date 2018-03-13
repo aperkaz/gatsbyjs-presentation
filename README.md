@@ -1,48 +1,31 @@
-# Spectacle Boilerplate
+# gatsbyjs-presentation
 
-## Contents
+🤵 [Gatsby.js](https://www.gatsbyjs.org/) introduction presentation made with [Spectacle.js](http://formidable.com/open-source/spectacle/).
 
-- [Reference](#reference)
-- [Getting Started](#getting-started)
-- [Build & Deployment](#build-deployment)
 
-## Reference
+## Content (to move)
 
-The Spectacle core API is available at [https://github.com/FormidableLabs/spectacle/blob/master/README.md](https://github.com/FormidableLabs/spectacle/blob/master/README.md).
+- 
 
-## Getting Started
+## Run, Build & Deploy
 
-After downloading the boilerplate, your first order of business is to open a terminal and run 
-```bash
-yarn
-```
-or 
-```bash
-npm install
-```
-if you're about that life.
-
-Next, run 
-```bash
-rm -R .git
-```
-to remove the existing version control.
-
-Then, to start up the local server, run
+To start up the local server, run
 ```bash
 npm start
 ```
+Open a browser and hit [http://localhost:3000](http://localhost:3000)
 
-Open a browser and hit [http://localhost:3000](http://localhost:3000), and we are ready to roll.
+<br/>
 
-## Build & Deployment
-
-Building the dist version of the project is as easy as running
+Building the dist version of the project
 ```bash
 npm run build
 ```
 
-If you want to deploy the slideshow to surge, run 
+To deploy the slideshow to [surge](https://surge.sh/), run 
 ```bash
 npm run deploy
 ```
+
+## License
+MIT © [Alain Perkaz](https://aperkaz.github.io)
