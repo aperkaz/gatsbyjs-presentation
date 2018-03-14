@@ -2,11 +2,6 @@
 
 🤵 [Gatsby.js](https://www.gatsbyjs.org/) introduction presentation made with [Spectacle.js](http://formidable.com/open-source/spectacle/).
 
-
-## Content (to move)
-
-- 
-
 ## Run, Build & Deploy
 
 To start up the local server, run
