@@ -6,13 +6,10 @@ import CodeSlide from "spectacle-code-slide";
 import {
   Appear,
   Fill,
-  BlockQuote,
-  Cite,
   Deck,
   Heading,
   ListItem,
   List,
-  Quote,
   Slide,
   Text,
   Layout,
@@ -26,9 +23,6 @@ import createTheme from "spectacle/lib/themes/default";
 // Require CSS
 require("normalize.css");
 
-// Import image preloader util
-import preloader from "spectacle/lib/utils/preloader";
-
 const theme = createTheme({
   primary: "#000",
   secondary: "white",
@@ -38,8 +32,6 @@ const theme = createTheme({
   primary: "Montserrat",
   secondary: "Helvetica"
 });
-
-// TODO - preload images
 
 export default class Presentation extends React.Component {
   render() {
