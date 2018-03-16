@@ -1,0 +1,4 @@
+npm install --save typography-theme-wikipedia
+>> src/utils/typography.js
+import wikipediaTheme from 'typography-theme-wikipedia';
+const typography = new Typography(wikipediaTheme)

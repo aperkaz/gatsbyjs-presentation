@@ -1,0 +1,35 @@
+ http://localhost:8001/___graphql
+
+ query IndexQuery {
+    site {
+      siteMetadata {
+        title,
+        author
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          internal {
+            content
+            type
+            contentDigest
+            owner
+          }
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "MMMM, YYYY")
+            parent
+          }
+        }
+      }
+    }
+  }
+
+
+
+sudo chmod -R 777
