@@ -2,6 +2,12 @@
 
 🤵 [Gatsby.js](https://www.gatsbyjs.org/) introduction presentation made with [Spectacle.js](http://formidable.com/open-source/spectacle/).
 
+## Deployment and presentation
+
+Online at [http://gatsby-introduction-lnu.surge.sh](http://gatsby-introduction-lnu.surge.sh)
+
+Presentation mode by appending `?presenter&timer` to the previous url.
+
 ## Run, Build & Deploy
 
 To start up the local server, run
