@@ -20,8 +20,25 @@ import {
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 
+// Import image preloader util
+import preloader from "spectacle/lib/utils/preloader";
+
 // Require CSS
 require("normalize.css");
+
+const images = {
+  dancingLeo: require("../assets/dancingLeo.gif"),
+  gatsbyMovie: require("../assets/gatsbyMovie.jpg"),
+  graphql: require("../assets/graphql.png"),
+  howGorgeous: require("../assets/howGorgeous.gif"),
+  pwa: require("../assets/pwa.png"),
+  react: require("../assets/react.png"),
+  thanks: require("../assets/thanks.gif"),
+  webpack: require("../assets/webpack.png"),
+  whoIsGatsby: require("../assets/whoIsGatsby.gif")
+};
+
+preloader(images);
 
 const theme = createTheme({
   primary: "#000",
@@ -37,41 +54,39 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={400} theme={theme}>
-        <Slide transition={["zoom"]} bgColor="primary" bgDarken="0.7" bgImage="http://pop-verse.com/wp-content/uploads/2013/05/The-Great-Gatsby-promo.jpg">
+        <Slide transition={["zoom"]} bgColor="primary" bgDarken="0.7" bgImage={images.gatsbyMovie.replace("/", "")}>
           <Heading size={6} fit caps lineHeight={1} textColor="secondary">
             The great Gatsby.js
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            changing the static site generation game
+            changing the static-site generation game
           </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="tertiary">
-          <Image src="https://media.giphy.com/media/zP1Gk3m8tukEw/giphy.gif" style={{ height: "350px" }}>what gatsby</Image>
+          <Image src={images.whoIsGatsby.replace("/", "")} style={{ height: "350px" }}>what gatsby</Image>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="tertiary">
           <List style={{ marginTop: "0" }}>
             <ListItem>
-              <Image src="https://s3.amazonaws.com/media-p.slid.es/uploads/alexanderfarennikov/images/1198519/reactjs.png"
+              <Image src={images.react.replace("/", "")}
                 style={{ height: "70px" }}
               />
             </ListItem>
             <ListItem>
-              <Image src="https://cdn-images-1.medium.com/max/1200/1*Wx82vEGrMfW4AdSLodZXgQ.png"
+              <Image src={images.webpack.replace("/", "")}
+                style={{ height: "70px" }}
+              />
+            </ListItem>
+            <ListItem style={{textAlign: "center"}}>
+              <Text>JAM Stack</Text>
+            </ListItem>
+            <ListItem>
+              <Image src={images.graphql.replace("/", "")}
                 style={{ height: "70px" }}
               />
             </ListItem>
             <ListItem>
-              <Image src="https://d33wubrfki0l68.cloudfront.net/0e10c97634da0242be91bec4f6a198a78dd68f99/b5de5/img/jamstack-full-logo.svg"
-                style={{ height: "40px" }}
-              />
-            </ListItem>
-            <ListItem>
-              <Image src="https://cdn-images-1.medium.com/max/1000/1*Fz_DTbJptm_S7GccttSFVw.png"
-                style={{ height: "70px" }}
-              />
-            </ListItem>
-            <ListItem>
-              <Image src="https://cdn-images-1.medium.com/max/1600/1*P-gXz7UCnyazZQHhy43ApQ.png"
+              <Image src={images.pwa.replace("/", "")}
                 style={{ height: "50px" }}
               />
             </ListItem>
@@ -97,7 +112,7 @@ export default class Presentation extends React.Component {
           </Layout>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="tertiary">
-          <Image src="https://media.giphy.com/media/6kFI7SEWQP4Hu/giphy.gif" style={{ height: "350px" }}>how gorgeous</Image>
+          <Image src={images.howGorgeous.replace("/", "")} style={{ height: "350px" }}>how gorgeous</Image>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <Heading size={2} textColor="secondary" style={{ marginBottom: "20px" }}>Goodies</Heading>
@@ -119,7 +134,7 @@ export default class Presentation extends React.Component {
           </Layout>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <Image src={"https://media.giphy.com/media/pBTIw7hzK6n6w/giphy.gif"} style={{ height: "300px" }}/>
+          <Image src={images.dancingLeo.replace("/", "")} style={{ height: "300px" }}/>
           <Heading size={4} textColor="secondary" caps>Demo time</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
@@ -171,7 +186,7 @@ export default class Presentation extends React.Component {
           ]}
         />
         <Slide transition={["fade"]} bgColor="tertiary" textColor="tertiary">
-          <Image src="https://media.giphy.com/media/rY93u9tQbybks/giphy.gif" style={{ height: "350px" }}>thanks</Image>
+          <Image src={images.thanks.replace("/", "")} style={{ height: "350px" }}>thanks</Image>
           <Heading size={4} textColor="secondary" caps>Thanks</Heading>
         </Slide>
       </Deck>
