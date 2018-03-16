@@ -18,6 +18,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "spectacle": "^4.0.0",
+    "spectacle-code-slide": "^0.5.2",
     "spectacle-renderer": "^0.0.3"
   },
   "devDependencies": {

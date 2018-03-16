@@ -1,8 +1,11 @@
 // Import React
 import React from "react";
+import CodeSlide from "spectacle-code-slide";
 
 // Import Spectacle Core tags
 import {
+  Appear,
+  Fill,
   BlockQuote,
   Cite,
   Deck,
@@ -12,7 +15,9 @@ import {
   Quote,
   Slide,
   Text,
-  Image
+  Layout,
+  Image,
+  Link
 } from "spectacle";
 
 // Import theme
@@ -20,6 +25,9 @@ import createTheme from "spectacle/lib/themes/default";
 
 // Require CSS
 require("normalize.css");
+
+// Import image preloader util
+import preloader from "spectacle/lib/utils/preloader";
 
 const theme = createTheme({
   primary: "#000",
@@ -30,6 +38,8 @@ const theme = createTheme({
   primary: "Montserrat",
   secondary: "Helvetica"
 });
+
+// TODO - preload images
 
 export default class Presentation extends React.Component {
   render() {
@@ -44,10 +54,10 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="tertiary">
-          <Image src="https://media.giphy.com/media/aJ51BFDTtnFAI/giphy.gif" />
+          <Image src="https://media.giphy.com/media/zP1Gk3m8tukEw/giphy.gif" style={{ height: "350px" }}>what gatsby</Image>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="tertiary">
-          <List>
+          <List style={{ marginTop: "0" }}>
             <ListItem>
               <Image src="https://s3.amazonaws.com/media-p.slid.es/uploads/alexanderfarennikov/images/1198519/reactjs.png"
                 style={{ height: "70px" }}
@@ -70,40 +80,107 @@ export default class Presentation extends React.Component {
             </ListItem>
             <ListItem>
               <Image src="https://cdn-images-1.medium.com/max/1600/1*P-gXz7UCnyazZQHhy43ApQ.png"
-                style={{ height: "60px" }}
+                style={{ height: "50px" }}
               />
             </ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
           </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={2} textColor="secondary" style={{ marginBottom: "20px" }} >Why</Heading>
+          <Layout>
+            <Fill>
+              <Appear>
+                <Text>Modern JS Stack </Text>
+              </Appear>
+              <Appear>
+                <Text>Easy customization</Text>
+              </Appear>
+              <Appear>
+                <Text>Bring your own data </Text>
+              </Appear>
+              <Appear>
+                <Text>Static Progressive Web App</Text>
+              </Appear>
+            </Fill>
+          </Layout>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="tertiary">
-          <Text>why</Text>
+          <Image src="https://media.giphy.com/media/6kFI7SEWQP4Hu/giphy.gif" style={{ height: "350px" }}>how gorgeous</Image>
         </Slide>
-
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <Heading size={3} textColor="secondary" caps>Content</Heading>
-          <List>
-            <ListItem>What is this?</ListItem>
-            <ListItem>Why year another ssg</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
+          <Heading size={2} textColor="secondary" style={{ marginBottom: "20px" }}>Goodies</Heading>
+          <Layout>
+            <Fill>
+              <Appear>
+                <Text>Community starters</Text>
+              </Appear>
+              <Appear>
+                <Text>Plugins</Text>
+              </Appear>
+              <Appear>
+                <Text>Themes</Text>
+              </Appear>
+              <Appear>
+                <Text>Static Progressive Web App</Text>
+              </Appear>
+            </Fill>
+          </Layout>
         </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>Headings</Heading>
-          <Heading size={1} textColor="secondary">Heading 1</Heading>
-          <Heading size={2} textColor="secondary">Heading 2</Heading>
-          <Heading size={3} textColor="secondary">Heading 3</Heading>
-          <Heading size={4} textColor="secondary">Heading 4</Heading>
-          <Heading size={5} textColor="secondary">Heading 5</Heading>
-          <Text size={6} textColor="secondary">Standard text</Text>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Image src={"https://media.giphy.com/media/pBTIw7hzK6n6w/giphy.gif"} style={{ height: "300px" }}/>
+          <Heading size={4} textColor="secondary" caps>Demo time</Heading>
         </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={4} textColor="secondary" caps>Requisites</Heading>
+          <Text><b>node</b> : v6 and up</Text>
+          <Text><b>npm</b> : v3 and up</Text>
+          <Layout>
+            <Fill>
+              <Appear>
+                <Text textColor="pink">or use Docker</Text>
+              </Appear>
+            </Fill>
+          </Layout>
+        </Slide>
+        <CodeSlide
+          bgColor="tertiary" textColor="primary"
+          transition={["fade"]}
+          lang="js"
+          textSize=".6em"
+          code={require("raw-loader!../assets/install")}
+          ranges={[
+            { loc: [0, 1], title: "Start container" },
+            { loc: [1, 2], title: "Install gatsby-cli" },
+            { loc: [2, 3], title: "Get blog-starter" },
+            { loc: [3, 6], title: "Start developing" }
+          ]}
+        />
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={4} textColor="secondary" caps>Starters</Heading>
+          <Link>https://www.gatsbyjs.org/docs/gatsby-starters</Link>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={4} textColor="secondary" caps>Plugins</Heading>
+          <Link>https://www.gatsbyjs.org/packages</Link>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={4} textColor="secondary" caps>Themes</Heading>
+          <Link>http://kyleamathews.github.io/typography.js</Link>
+        </Slide>
+        <CodeSlide
+          bgColor="tertiary" textColor="primary"
+          transition={["fade"]}
+          lang="js"
+          textSize=".6em"
+          code={require("raw-loader!../assets/theme")}
+          ranges={[
+            { loc: [0, 1], title: "Install theme" },
+            { loc: [2, 4], title: "Modify typography.js" }
+          ]}
+        />
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="tertiary">
+          <Image src="https://media.giphy.com/media/rY93u9tQbybks/giphy.gif" style={{ height: "350px" }}>thanks</Image>
+          <Heading size={4} textColor="secondary" caps>Thanks</Heading>
         </Slide>
       </Deck>
     );
