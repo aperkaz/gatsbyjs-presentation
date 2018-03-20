@@ -4,7 +4,7 @@
 
 ## Deployment and presentation
 
-Online at [http://gatsby-introduction-lnu.surge.sh](http://gatsby-introduction-lnu.surge.sh)
+Online at [https://gatsby-introduction-lnu.surge.sh](http://gatsby-introduction-lnu.surge.sh)
 
 Presentation mode by appending `?presenter&timer` to the previous url.
 

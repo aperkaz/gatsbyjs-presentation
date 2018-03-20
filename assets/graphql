@@ -1,4 +1,4 @@
- http://localhost:8001/___graphql
+ http://localhost:8000/___graphql
 
  query IndexQuery {
     site {

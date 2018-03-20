@@ -1,8 +1,5 @@
-// Import React
 import React from "react";
 import CodeSlide from "spectacle-code-slide";
-
-// Import Spectacle Core tags
 import {
   Appear,
   Fill,
@@ -77,7 +74,7 @@ export default class Presentation extends React.Component {
                 style={{ height: "70px" }}
               />
             </ListItem>
-            <ListItem style={{textAlign: "center"}}>
+            <ListItem style={{ textAlign: "center" }}>
               <Text>JAM Stack</Text>
             </ListItem>
             <ListItem>
@@ -163,16 +160,8 @@ export default class Presentation extends React.Component {
           ]}
         />
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <Heading size={4} textColor="secondary" caps>Starters</Heading>
-          <Link>https://www.gatsbyjs.org/docs/gatsby-starters</Link>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <Heading size={4} textColor="secondary" caps>Plugins</Heading>
-          <Link>https://www.gatsbyjs.org/packages</Link>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <Heading size={4} textColor="secondary" caps>Themes</Heading>
-          <Link>http://kyleamathews.github.io/typography.js</Link>
+          <Image src={"https://media.giphy.com/media/eNCZy1yl5ViZa/giphy.gif"} style={{ height: "300px" }}>GoGo</Image>
+          <Heading size={4} textColor="secondary" caps>Go-Go GraphQL</Heading>
         </Slide>
         <CodeSlide
           bgColor="tertiary" textColor="primary"
@@ -185,6 +174,22 @@ export default class Presentation extends React.Component {
             { loc: [2, 4], title: "Modify typography.js" }
           ]}
         />
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={4} textColor="secondary" caps>Starters</Heading>
+          <Link>https://www.gatsbyjs.org/docs/gatsby-starters</Link>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={4} textColor="secondary" caps>Plugins</Heading>
+          <Link>https://www.gatsbyjs.org/packages</Link>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={4} textColor="secondary" caps>Themes</Heading>
+          <Link>http://kyleamathews.github.io/typography.js</Link>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={4} textColor="secondary" caps>Ref CMS integration</Heading>
+          <Link>https://using-contentful.netlify.com/</Link>
+        </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="tertiary">
           <Image src={images.thanks.replace("/", "")} style={{ height: "350px" }}>thanks</Image>
           <Heading size={4} textColor="secondary" caps>Thanks</Heading>
