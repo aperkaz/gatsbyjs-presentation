@@ -41,7 +41,7 @@ const theme = createTheme({
   primary: "#000",
   secondary: "white",
   tertiary: "#fce715",
-  quarternary: "#CECECE"
+  quarternary: "#3414fa"
 }, {
   primary: "Montserrat",
   secondary: "Helvetica"
@@ -52,7 +52,7 @@ export default class Presentation extends React.Component {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={400} theme={theme}>
         <Slide transition={["zoom"]} bgColor="primary" bgDarken="0.7" bgImage={images.gatsbyMovie.replace("/", "")}>
-          <Heading size={6} fit caps lineHeight={1} textColor="secondary">
+          <Heading size={6} fit caps lineHeight={1} style={{ color: "white" }}>
             The great Gatsby.js
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
@@ -90,7 +90,7 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <Heading size={2} textColor="secondary" style={{ marginBottom: "20px" }} >Why</Heading>
+          <Heading size={2} textColor="quarternary" style={{ marginBottom: "20px" }} >Why</Heading>
           <Layout>
             <Fill>
               <Appear>
@@ -112,7 +112,7 @@ export default class Presentation extends React.Component {
           <Image src={images.howGorgeous.replace("/", "")} style={{ height: "350px" }}>how gorgeous</Image>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <Heading size={2} textColor="secondary" style={{ marginBottom: "20px" }}>Goodies</Heading>
+          <Heading size={2} textColor="quarternary" style={{ marginBottom: "20px" }}>Goodies</Heading>
           <Layout>
             <Fill>
               <Appear>
@@ -132,28 +132,28 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <Image src={images.dancingLeo.replace("/", "")} style={{ height: "300px" }}/>
-          <Heading size={4} textColor="secondary" caps>Demo time</Heading>
+          <Heading size={4} textColor="quarternary" caps>Demo time</Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <Heading size={4} textColor="secondary" caps>Requisites</Heading>
+          <Heading size={4} textColor="quarternary" caps>Requisites</Heading>
           <Text><b>node</b> : v6 and up</Text>
           <Text><b>npm</b> : v3 and up</Text>
           <Layout>
             <Fill>
               <Appear>
-                <Text textColor="pink">or use Docker</Text>
+                <Text textColor="pink"><b>or use Docker</b></Text>
               </Appear>
             </Fill>
           </Layout>
         </Slide>
         <CodeSlide
-          bgColor="tertiary" textColor="primary"
+          bgColor="tertiary" textColor="black"
           transition={["fade"]}
           lang="js"
           textSize=".6em"
           code={require("raw-loader!../assets/install")}
           ranges={[
-            { loc: [0, 1], title: "Start container" },
+            { loc: [0, 1], title: "Start container"},
             { loc: [1, 2], title: "Install gatsby-cli" },
             { loc: [2, 3], title: "Get blog-starter" },
             { loc: [3, 6], title: "Start developing" }
@@ -161,7 +161,7 @@ export default class Presentation extends React.Component {
         />
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <Image src={"https://media.giphy.com/media/eNCZy1yl5ViZa/giphy.gif"} style={{ height: "300px" }}>GoGo</Image>
-          <Heading size={4} textColor="secondary" caps>Go-Go GraphQL</Heading>
+          <Heading size={4} textColor="quarternary" caps>Go-Go GraphQL</Heading>
         </Slide>
         <CodeSlide
           bgColor="tertiary" textColor="primary"
@@ -175,24 +175,24 @@ export default class Presentation extends React.Component {
           ]}
         />
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <Heading size={4} textColor="secondary" caps>Starters</Heading>
+          <Heading size={4} textColor="quarternary" caps>Starters</Heading>
           <Link>https://www.gatsbyjs.org/docs/gatsby-starters</Link>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <Heading size={4} textColor="secondary" caps>Plugins</Heading>
+          <Heading size={4} textColor="quarternary" caps>Plugins</Heading>
           <Link>https://www.gatsbyjs.org/packages</Link>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <Heading size={4} textColor="secondary" caps>Themes</Heading>
+          <Heading size={4} textColor="quarternary" caps>Themes</Heading>
           <Link>http://kyleamathews.github.io/typography.js</Link>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <Heading size={4} textColor="secondary" caps>Ref CMS integration</Heading>
+          <Heading size={4} textColor="quarternary" caps>Ref CMS integration</Heading>
           <Link>https://using-contentful.netlify.com/</Link>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="tertiary">
           <Image src={images.thanks.replace("/", "")} style={{ height: "350px" }}>thanks</Image>
-          <Heading size={4} textColor="secondary" caps>Thanks</Heading>
+          <Heading size={4} textColor="quarternary" caps>Thanks</Heading>
         </Slide>
       </Deck>
     );
