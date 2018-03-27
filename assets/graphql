@@ -1,35 +1,77 @@
- http://localhost:8000/___graphql
+# http://localhost:8000/___graphql
 
- query IndexQuery {
-    site {
-      siteMetadata {
-        title,
-        author
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+# Get all posts from file system
+
+query getFilesToPosts{
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
       edges {
         node {
-          excerpt
-          internal {
-            content
-            type
-            contentDigest
-            owner
-          }
           fields {
             slug
           }
           frontmatter {
-            title
-            date(formatString: "MMMM, YYYY")
-            parent
+            title,
+            date
           }
         }
       }
     }
+}
+
+# Get all posts + metadata
+
+ query getPostMetadata {
+     site {
+       siteMetadata {
+         title,
+         author
+       }
+     }
+     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1) {
+       edges {
+         node {
+           excerpt
+           internal {
+             content
+             type
+             contentDigest
+             owner
+           }
+           fields {
+             slug
+           }
+           frontmatter {
+             title
+             date(formatString: "MMMM, YYYY")
+             parent
+           }
+         }
+       }
+     }
+   }
+
+# Get a post by id (Slug)
+
+ query getPostBySlugId($slugId: String!) {
+    site {
+      siteMetadata {
+        title
+        author
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slugId } }) {
+      id
+      html
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+      }
+    }
   }
 
+{
+  "slugId": "/hi-folks/"
+}
 
 
 sudo chmod -R 777
